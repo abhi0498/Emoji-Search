@@ -1,25 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import EmojiList from './components/EmojiList';
+import emojis from './emojis.json'
+import { AppContextProvider } from './context/emoji-context';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContextProvider value={emojis}>
+      <div className="App container mx-auto p-6" >
+        <h1>Emoji Search <span role='img' aria-label='wink'>😉</span> </h1>
+        <EmojiList />
+      </div>
+    </AppContextProvider>
   );
 }
 
