@@ -7,6 +7,7 @@ import data from '../emojis.json'
 const EmojiList: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [emojis, setEmojis] = useState(data)
+    const [group, setGroup] = useState('')
 
     useEffect(() => {
         const filterEmojis = () => {
